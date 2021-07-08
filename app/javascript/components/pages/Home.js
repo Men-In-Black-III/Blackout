@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { Card, Button, CardTitle, CardText, Row, Col, NavLink } from 'reactstrap';
 
 const Home = (props) => {
   return (
@@ -11,7 +11,7 @@ const Home = (props) => {
             <CardText>
               Insert image here
             </CardText>
-            <Button>Go somewhere</Button>
+            <NavLink href="pages/CocktailOne"><Button>View CocktailOne</Button></NavLink>
           </Card>
         </Col>
         <Col sm="6">
@@ -24,6 +24,7 @@ const Home = (props) => {
           </Card>
         </Col>
       </Row>
+      <a href="#">View More</a>
     </div>
   );
 };

@@ -5,6 +5,8 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import NotFound from "./pages/NotFound"
 import Home from "./pages/Home"
+import AboutUs from "./pages/AboutUs"
+import CocktailOne from "./pages/CocktailOne"
 import {
   BrowserRouter as Router,
   Route,
@@ -16,11 +18,18 @@ class App extends React.Component {
     return (
       <>
       <Router>
+        <div>
+      <Header component={ Header } />
         <Switch>
           <Route exact path="/" component={ Home } />
-          <Route exact path="./pages/DrinkIndex" component={ DrinkIndex } />
-          <Router exact path="./pages/DrinkShow" component={ DrinkShow } />
+          <Route path="/CocktailOne" component={ CocktailOne } />
+          <Route path="/AboutUs" component={ AboutUs } />
+          <Route path="/DrinkIndex" component={ DrinkIndex } />
+          <Route path="/DrinkShow" component={ DrinkShow } />
+          <Route path="/NotFound" component={ NotFound } />
         </Switch>
+        <Footer component={ Footer } />
+        </div>
       </Router>
       </>
     );

@@ -7,16 +7,16 @@ const Header = (props) => {
       <p>List Based</p>
       <Nav>
         <NavItem>
-          <NavLink href="#">Home</NavLink>
+          <NavLink href="/">Home</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">About</NavLink>
+          <NavLink href="/AboutUs">About</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Login</NavLink>
+          <NavLink href="/users/sign_in">Login</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Sign up</NavLink>
+          <NavLink href="/users/sign_up">Sign up</NavLink>
         </NavItem>
       </Nav>
       <hr />
