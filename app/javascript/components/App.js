@@ -6,7 +6,6 @@ import Footer from "./components/Footer"
 import NotFound from "./pages/NotFound"
 import Home from "./pages/Home"
 import AboutUs from "./pages/AboutUs"
-import CocktailOne from "./pages/CocktailOne"
 import {
   BrowserRouter as Router,
   Route,
@@ -22,7 +21,6 @@ class App extends React.Component {
       <Header component={ Header } />
         <Switch>
           <Route exact path="/" component={ Home } />
-          <Route path="/CocktailOne" component={ CocktailOne } />
           <Route path="/AboutUs" component={ AboutUs } />
           <Route path="/DrinkIndex" component={ DrinkIndex } />
           <Route path="/DrinkShow" component={ DrinkShow } />
