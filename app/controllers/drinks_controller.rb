@@ -21,10 +21,6 @@ class DrinksController < ApplicationController
     private
     def drinks_params
         params.require(:drink).permit(:name, :img_url, :ingredients, :steps, :api_id)
-    end 
-
-    def favorite_drinks_params
-        params.require(:favorite_drink).permit(:user_id, :drink_id)
     end
 end
 
