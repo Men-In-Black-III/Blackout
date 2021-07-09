@@ -52,8 +52,9 @@ class App extends React.Component {
           <Route path="/DrinkIndex" component={ DrinkIndex } />
           <Route path="/DrinkShow/:id" render= {(props) => {
           let id = props.match.params.id
-          let drinks = this.state.drinks.find(drinks => drinks._id === +id)
-          return <DrinksShow drinks = {drink} deletedrinks={this.drinks}/>
+          console.log(id)
+          let drink = this.state.drinks.find(drinks => drinks._id === id)
+          return <DrinkShow drinks = {drink}/>
         }} />
           <Route path="/NotFound" component={ NotFound } />
           <Route path="/Favorites" component= { Favorites }/>

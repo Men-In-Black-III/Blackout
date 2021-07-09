@@ -23,10 +23,10 @@ class Home extends Component {
                 <Row key={drink._id}>
                   <Col sm="6">
                     <Card body>
-                      <NavLink to="/AboutUs">
+                      <NavLink href={`/DrinkShow/${drink._id}`}>
                         <CardTitle tag="h5">Cocktail {drink.drinkName}</CardTitle>
                       </NavLink>
-                      <NavLink to="/AboutUs">
+                      <NavLink href={`/DrinkShow/${drink._id}`}>
                         <Button>Show More</Button>
                       </NavLink>
                     </Card>
