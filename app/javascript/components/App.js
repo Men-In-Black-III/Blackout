@@ -55,7 +55,6 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render= { (props) => <Home drinks = {drinks}/> } />
           <Route path="/AboutUs" component={ AboutUs } />
-          <Route path="/DrinkIndex" component={ DrinkIndex } />
           <Route path="/DrinkShow/:id" render= {(props) => {
           let id = props.match.params.id
           console.log(id)
