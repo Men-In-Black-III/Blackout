@@ -38,14 +38,20 @@ class App extends React.Component {
     })
   }
   render () {
-    // console.log(this.state)
+    const {
+      logged_in,
+      current_user
+    } = this.props
     const { drinks } = this.state
     return (
 
       <>
       <Router>
         <div>
-      <Header component={ Header } />
+      <Header component={ Header }
+      logged_in = {logged_in}
+      current_user = {current_user}
+       />
         <Switch>
           <Route exact path="/" render= { (props) => <Home drinks = {drinks}/> } />
           <Route path="/AboutUs" component={ AboutUs } />
