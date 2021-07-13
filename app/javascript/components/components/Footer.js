@@ -5,14 +5,7 @@ import { Card, Button, CardFooter, CardBody,
   const Footer = (props) => {
     return (
       <div>
-        <Card>
-          <CardBody>
-            <CardTitle tag="h5">Footer Title</CardTitle>
-            <CardText>Created by Men In Black.</CardText>
-            <Button>Button</Button>
-          </CardBody>
-          <CardFooter className="text-muted">Footer</CardFooter>
-        </Card>
+          <CardFooter className="Footer">Footer</CardFooter>
       </div>
     );
   };

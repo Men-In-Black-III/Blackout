@@ -1,5 +1,4 @@
 import React from "react"
-import DrinkIndex from "./pages/DrinkIndex"
 import DrinkShow from "./pages/DrinkShow"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -61,8 +60,9 @@ class App extends React.Component {
           let drink = this.state.drinks.find(drinks => drinks._id === id)
           return <DrinkShow drinks = {drink}/>
         }} />
+          <Route path="/drinks_list" component= { Favorites }/>
           <Route path="/NotFound" component={ NotFound } />
-          <Route path="/Favorites" component= { Favorites }/>
+          
         </Switch>
         <Footer component={ Footer } />
         </div>

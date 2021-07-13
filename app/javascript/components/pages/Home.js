@@ -3,7 +3,6 @@ import {
   Card,
   Button,
   CardTitle,
-  CardText,
   Row,
   Col,
   NavLink,

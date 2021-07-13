@@ -1,20 +1,23 @@
 class DrinksController < ApplicationController
     def index
-        if !params[:user_id]
-            render json: "There is no user", status:422
-          else 
-            user = User.find(params[:user_id]);
-            render json: user.drinks
-          end 
+        drinks = current_user.drinks
+            render json: drinks
+          
     end
 
     def create
         #current_user to use when not in testing anymore
         drink = Drink.find_by(api_id:params[:api_id])
         drink = Drink.create(drinks_params) if drink.nil? 
-        favorite = FavoriteDrink.create(user: params[:user_id], drink: drink) 
+        favorite = FavoriteDrink.create(user: current_user, drink: drink) 
         render json: favorite
     end
+
+    def destroy
+        favorite = FavoriteDrink.find(params[:id]) 
+        favorite.destroy
+        render json: favorite
+      end
 
     
 

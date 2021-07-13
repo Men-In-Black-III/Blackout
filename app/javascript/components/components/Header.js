@@ -33,7 +33,7 @@ const Header = (props) => {
         {
           logged_in && 
             <NavItem>
-              <NavLink href="/Favorites">Favorites</NavLink>
+              <NavLink href="/drinks_list">Favorites</NavLink>
             </NavItem>
         }
       </Nav>
