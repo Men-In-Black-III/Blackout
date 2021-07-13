@@ -1,32 +1,44 @@
-import React from "react";
-import { Card, Button, CardTitle, CardText, Row, Col, NavLink } from 'reactstrap';
+import React, { Component} from "react";
+import {
+  Card,
+  Button,
+  CardTitle,
+  CardText,
+  Row,
+  Col,
+  NavLink,
+} from "reactstrap";
 
-const Home = (props) => {
-  return (
-    <div>
-      <Row>
-        <Col sm="6">
-          <Card body>
-            <CardTitle tag="h5">Cocktail One</CardTitle>
-            <CardText>
-              Insert image here
-            </CardText>
-            <NavLink href="pages/CocktailOne"><Button>View CocktailOne</Button></NavLink>
-          </Card>
-        </Col>
-        <Col sm="6">
-          <Card body>
-            <CardTitle tag="h5">Cocktail Two</CardTitle>
-            <CardText>
-            Insert image here
-            </CardText>
-            <Button>Go somewhere</Button>
-          </Card>
-        </Col>
-      </Row>
-      <a href="#">View More</a>
-    </div>
-  );
-};
+class Home extends Component {
+  render() {
+    let { drinks } = this.props;
+    console.log({drinks})
+    return (
+      <div className="main-body">
+        <h2>Cocktails</h2>
+        <div className="home-cards">
+          {drinks &&
+            drinks.map((drink) => {
+              return (
+                <Row key={drink._id}>
+                  <Col sm="6">
+                    <Card body>
+                      <NavLink href={`/DrinkShow/${drink._id}`}>
+                        <CardTitle tag="h5">Cocktail {drink.drinkName}</CardTitle>
+                      </NavLink>
+                      <NavLink href={`/DrinkShow/${drink._id}`}>
+                        <Button>Show More</Button>
+                      </NavLink>
+                    </Card>
+                  </Col>
+                </Row>
+              );
+            })}
+          <a href="#">View More</a>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Home;
