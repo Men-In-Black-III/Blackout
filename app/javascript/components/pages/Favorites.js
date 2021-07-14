@@ -24,15 +24,29 @@ export default class Favorites extends Component {
         })
     }
 
-    
+
 
     render() {
-        console.log(this.state.favorites);
+        console.log(this.state.favorites)
         return (
             <div>
-                <h2>Favorites List</h2>
-
-
+                          {this.state.favorites &&
+            this.state.favorites.map((favorite) => {
+              return (
+                <Row key={favorite.id}>
+                  <Col sm="6">
+                    <Card body>
+                      <NavLink href={`/DrinkShow/${favorite.id}`}>
+                        <CardTitle tag="h5">Cocktail {favorite.drinkName}</CardTitle>
+                      </NavLink>
+                      <NavLink href={`/DrinkShow/${favorite.id}`}>
+                        <Button>Show More</Button>
+                      </NavLink>
+                    </Card>
+                  </Col>
+                </Row>
+              );
+            })}
             </div>
         )
     }
