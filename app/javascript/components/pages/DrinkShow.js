@@ -19,15 +19,15 @@ class DrinkShow extends Component {
           <Card body className="drink-name">
             <CardTitle tag="h5">This is a {drink.drinkName}</CardTitle>
             <CardText>
-              {" "}
-              This is how you make it{drink.drinkInstructions}{" "}
+              
+              This is how you make it{drink.drinkInstructions}
             </CardText>
             <CardText>
-              {" "}
+              
               This is what you're going to need {drink.drinkIngredients}
             </CardText>
             <CardText >
-              {" "}
+              
               <img className = "drinkImgs"
              src= {drink.drinkThumb}
              alt = "drink img"
