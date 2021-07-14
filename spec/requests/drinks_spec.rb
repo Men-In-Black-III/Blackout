@@ -2,6 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe "Drinks", type: :request do
+  include Devise::Test::IntegrationHelpers
   describe "GET /index" do
     it "get a list of all the users favorite drinks" do
     user = User.create! email:"testing3@gmail.com", password:"password"
