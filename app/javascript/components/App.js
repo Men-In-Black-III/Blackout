@@ -1,5 +1,4 @@
 import React from "react"
-import DrinkIndex from "./pages/DrinkIndex"
 import DrinkShow from "./pages/DrinkShow"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -17,7 +16,9 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      drinks: []
+      drinks: [],
+      redirectToReferrer:false
+
     }
   }
 
@@ -37,6 +38,60 @@ class App extends React.Component {
       console.log("drinks read fetch errors", errors)
     })
   }
+
+  
+  postToFavorites = (favObj) => {
+    return fetch("http://localhost:3000/drinks", {
+      body: JSON.stringify(favObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((res) => {
+        if (res.status === 422) {
+          console.log("Please check your submission.");
+        } else {
+          return res.json();
+        }
+      })
+      .catch((errors) => {
+        console.log("create errors:", errors);
+      });
+  };
+
+  addToFavorites = (drink) => {
+    drink.drinkIngredients = drink.drinkIngredients.join("")
+    const {drinkIngredients, drinkName, drinkInstructions, drinkThumb, _id} = drink    
+    const favObj = { 
+      name:drinkName,
+      img_url:drinkThumb,
+      steps:drinkInstructions,
+      ingredients:drinkIngredients,
+      api_id:_id
+    }
+    this.postToFavorites(favObj)
+
+    }
+
+    // deleteDrink = (id) => {
+    //   fetch(`http://localhost:3000/drinks_list/${id}`, {
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   method: "DELETE"
+    // })
+    // .then(response => {
+    //   return response.json()
+    // })
+    // .then(payload => {
+    //   return this.readDrinks()
+    // })
+    // .catch(errors => {
+    //   console.log("delete errors:", errors)
+    // })
+    // }
+
   render () {
     const {
       logged_in,
@@ -57,12 +112,15 @@ class App extends React.Component {
           <Route path="/AboutUs" component={ AboutUs } />
           <Route path="/DrinkShow/:id" render= {(props) => {
           let id = props.match.params.id
-          console.log(id)
           let drink = this.state.drinks.find(drinks => drinks._id === id)
-          return <DrinkShow drinks = {drink}/>
+          console.log(this.state);
+          console.log({id});
+          console.log({drink});
+          return <DrinkShow drink = {drink} addToFavorites = {this.addToFavorites}/>
         }} />
+          <Route path="/drinks_list" component= { Favorites }/>
           <Route path="/NotFound" component={ NotFound } />
-          <Route path="/Favorites" component= { Favorites }/>
+          
         </Switch>
         <Footer component={ Footer } />
         </div>
