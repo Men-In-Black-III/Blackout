@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'spec_helper'
+
 
 RSpec.describe "Drinks", type: :request do
   describe "GET /index" do

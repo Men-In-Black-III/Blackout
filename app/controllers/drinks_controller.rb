@@ -1,6 +1,5 @@
 class DrinksController < ApplicationController
     def index
-        byebug
         drinks = current_user.drinks
         render json: drinks
     end
@@ -13,7 +12,11 @@ class DrinksController < ApplicationController
         render json: favorite
     end
 
-    
+    def destroy
+        favorite = FavoriteDrink.find(params[:id]) 
+        favorite.destroy
+        render json: favorite
+      end
 
     private
     def drinks_params
