@@ -11,7 +11,8 @@ import {
 class Home extends Component {
   render() {
     let { drinks } = this.props;
-    console.log({drinks})
+    //deconstruct ^
+    console.log(this.props.state)
     return (
       <div className="main-body">
         <h2>Cocktails</h2>

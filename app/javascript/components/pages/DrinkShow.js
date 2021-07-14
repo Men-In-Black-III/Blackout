@@ -2,29 +2,37 @@ import React, { Component } from "react";
 import { Button, Card, CardTitle, CardText } from "reactstrap";
 import '../../../assets/stylesheets/drinks.scss'
 class DrinkShow extends Component {
+
+
+
+  handleSubmit=(e) => {
+    this.props.addToFavorites(this.props.drink)
+    this.setState({redirectToReferrer:true})
+  }
+
   render() {
-    let { drinks } = this.props;
-    console.log(this.props.drinks);
+    let { drink } = this.props;
+    // console.log(this.props.drink);
     return (
       <div>
-        {drinks && (
+        {drink && (
           <Card body className="drink-name">
-            <CardTitle tag="h5">This is a {drinks.drinkName}</CardTitle>
+            <CardTitle tag="h5">This is a {drink.drinkName}</CardTitle>
             <CardText>
               {" "}
-              This is how you make it{drinks.drinkInstructions}{" "}
+              This is how you make it{drink.drinkInstructions}{" "}
             </CardText>
             <CardText>
               {" "}
-              This is what you're going to need {drinks.drinkIngredients}
+              This is what you're going to need {drink.drinkIngredients}
             </CardText>
             <CardText >
               {" "}
               <img className = "drinkImgs"
-             src= {drinks.drinkThumb}
+             src= {drink.drinkThumb}
              alt = "drink img"
              />
-             {/* <button onClick = ></button> */}
+             <Button onClick={this.handleSubmit}>Add To Favorites</Button>
             </CardText>
           </Card>
         )}
