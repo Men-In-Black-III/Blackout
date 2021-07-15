@@ -24,8 +24,10 @@ export default class Favorites extends Component {
       .then((res) => res.json())
       .then((payload) => {
         this.setState({ favorites: payload });
+        console.log("read favorite");
+        console.log("Favorites loaded");
       })
-      .then(()=> this.readFavorites)
+      // .then((payload)=> this.readFavorites)
       .catch((errors) => {
         console.log(errors);
       });
@@ -37,7 +39,7 @@ export default class Favorites extends Component {
       <div>
         {this.state.favorites &&
           this.state.favorites.map((favorite, index) => {
-            console.log({ favorite });
+            // console.log({ favorite });
             return (
               <Row key={index}>
                 <Col sm="6">

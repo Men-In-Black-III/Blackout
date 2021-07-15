@@ -12,9 +12,9 @@ constructor(props){
   }
 }
 
-  handleSubmit=(e) => {
+ handleSubmit= (e) => {
   
-    this.props.addToFavorites(this.props.drink)
+  this.props.addToFavorites(this.props.drink)
     this.setState({redirect:true})
   }
 
@@ -23,7 +23,7 @@ constructor(props){
   render() {
     let { drink } = this.props;
    const {logged_in} = this.props 
-   console.log(this.state.redirect)
+  //  console.log(this.state.redirect)
     return (
       <div>
         {drink && (

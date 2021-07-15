@@ -45,6 +45,7 @@ class App extends React.Component {
         if (res.status === 422) {
           console.log("Please check your submission.");
         } else {
+          console.log(res);
           return res.json();
         }
       })
@@ -88,7 +89,6 @@ class App extends React.Component {
   render() {
     const { logged_in, current_user } = this.props;
     const { drinks } = this.state;
-    console.log(this.state.redirectToReferrer)
     return (
       <>
         <Router>

@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     let { drinks } = this.props;
     //deconstruct ^
-    console.log(this.props.state)
+    // console.log(this.props.state)
     return (
       <div className="main-body">
         <h2>Cocktails</h2>
