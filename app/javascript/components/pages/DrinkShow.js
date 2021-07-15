@@ -5,17 +5,11 @@ import '../../../assets/stylesheets/drinks.scss'
 
 
 class DrinkShow extends Component {
-constructor(props){
-  super(props);
-  this.state={
-    redirect: false
-  }
-}
 
  handleSubmit= (e) => {
   
   this.props.addToFavorites(this.props.drink)
-    this.setState({redirect:true})
+
   }
 
   
@@ -23,7 +17,7 @@ constructor(props){
   render() {
     let { drink } = this.props;
    const {logged_in} = this.props 
-  //  console.log(this.state.redirect)
+   console.log(this.props.redirect)
     return (
       <div>
         {drink && (
@@ -50,7 +44,7 @@ constructor(props){
             </CardText>
           </Card>
         )}
-        {this.state.redirect && <Redirect to="/drinks_list" />}
+        {this.props.redirect && <Redirect to="/drinks_list" />}
       </div>
     );
   }

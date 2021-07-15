@@ -13,6 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       drinks: [],
+      redirect: false
     };
   }
 
@@ -46,6 +47,7 @@ class App extends React.Component {
           console.log("Please check your submission.");
         } else {
           console.log(res);
+          this.setState({redirect:true})
           return res.json();
         }
       })
@@ -68,23 +70,23 @@ class App extends React.Component {
     this.postToFavorites(favObj);
   };
 
-  // deleteDrink = (id) => {
-  //   fetch(`http://localhost:3000/drinks_list/${id}`, {
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   },
-  //   method: "DELETE"
-  // })
-  // .then(response => {
-  //   return response.json()
-  // })
-  // .then(payload => {
-  //   return this.readDrinks()
-  // })
-  // .catch(errors => {
-  //   console.log("delete errors:", errors)
-  // })
-  // }
+  deleteDrink = (id) => {
+    fetch(`http://localhost:3000/favorite_drinks/${id}`, {
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "DELETE"
+  })
+  .then(response => {
+    return response.json()
+  })
+  .then(payload => {
+    return this.readDrinks()
+  })
+  .catch(errors => {
+    console.log("delete errors:", errors)
+  })
+  }
 
   render() {
     const { logged_in, current_user } = this.props;
@@ -117,12 +119,12 @@ class App extends React.Component {
                       drink={drink}
                       addToFavorites={this.addToFavorites}
                       logged_in={logged_in}
-                      redirectToReferrer = {this.state.redirectToReferrer}
+                      redirect={this.state.redirect}
                     />
                   );
                 }}
               />
-              <Route path="/drinks_list" component={Favorites} />
+              <Route path="/drinks_list" component={Favorites} deleteDrink ={this.deleteDrink} />
               <Route path="/NotFound" component={NotFound} />
             </Switch>
             <Footer component={Footer} />

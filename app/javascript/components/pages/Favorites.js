@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CardText, Card, CardTitle, Row, Col } from "reactstrap";
+import { CardText, Card, CardTitle, Row, Col, Button } from "reactstrap";
 
 export default class Favorites extends Component {
   constructor(props) {
@@ -13,8 +13,8 @@ export default class Favorites extends Component {
   }
 
 
-  handleSubmit=(e) => {
-    this.props.deleteFavorites(this.props.drink)
+  handleSubmit=(e,id) => {
+    this.props.deleteDrink(id)
   }
 
   
@@ -32,6 +32,9 @@ export default class Favorites extends Component {
         console.log(errors);
       });
   };
+  // deleteFavorites = () => {
+  //   console.log(this.drinks.favorite)
+  // }
 
   render() {
     console.log(this.state.favorites);
@@ -41,7 +44,7 @@ export default class Favorites extends Component {
           this.state.favorites.map((favorite, index) => {
             // console.log({ favorite });
             return (
-              <Row key={index}>
+              <Row key={favorite.id}>
                 <Col sm="6">
                   <Card body>
                     <CardTitle tag="h5">This is a {favorite.name}</CardTitle>
@@ -58,6 +61,7 @@ export default class Favorites extends Component {
                         alt="drink img"
                       />
                     </CardText>
+                    <Button onClick= {(e) => this.handleSubmit(e, favorite.id) }>Delete favorite</Button>
                   </Card>
                 </Col>
               </Row>
