@@ -1,18 +1,29 @@
 import React, { Component } from "react";
 import { Button, Card, CardTitle, CardText } from "reactstrap";
+import { Redirect } from "react-router-dom";
 import '../../../assets/stylesheets/drinks.scss'
+
+
 class DrinkShow extends Component {
-
-
+constructor(props){
+  super(props);
+  this.state={
+    redirect: false
+  }
+}
 
   handleSubmit=(e) => {
+  
     this.props.addToFavorites(this.props.drink)
-    this.setState({redirectToReferrer:true})
+    this.setState({redirect:true})
   }
+
+  
 
   render() {
     let { drink } = this.props;
-    // console.log(this.props.drink);
+   const {logged_in} = this.props 
+   console.log(this.state.redirect)
     return (
       <div>
         {drink && (
@@ -32,10 +43,14 @@ class DrinkShow extends Component {
              src= {drink.drinkThumb}
              alt = "drink img"
              />
-             <Button onClick={this.handleSubmit}>Add To Favorites</Button>
+             {
+               logged_in ? logged_in &&   <Button onClick={this.handleSubmit}>Add To Favorites</Button>
+               :null
+             }
             </CardText>
           </Card>
         )}
+        {this.state.redirect && <Redirect to="/drinks_list" />}
       </div>
     );
   }

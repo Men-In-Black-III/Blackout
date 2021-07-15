@@ -8,14 +8,16 @@ export default class Favorites extends Component {
       favorites: [],
     };
   }
+  componentDidMount() {
+    this.readFavorites();
+  }
+
 
   handleSubmit=(e) => {
     this.props.deleteFavorites(this.props.drink)
   }
 
-  componentDidMount() {
-    this.readFavorites();
-  }
+  
 
   readFavorites = () => {
     fetch(`http://localhost:3000/drinks`)
@@ -23,6 +25,7 @@ export default class Favorites extends Component {
       .then((payload) => {
         this.setState({ favorites: payload });
       })
+      .then(()=> this.readFavorites)
       .catch((errors) => {
         console.log(errors);
       });
@@ -41,15 +44,12 @@ export default class Favorites extends Component {
                   <Card body>
                     <CardTitle tag="h5">This is a {favorite.name}</CardTitle>
                     <CardText>
-                      {" "}
-                      This is how you make it{favorite.instructions}{" "}
+                      This is how you make it{favorite.instructions}
                     </CardText>
                     <CardText>
-                      {" "}
                       This is what you're going to need {favorite.ingredients}
                     </CardText>
                     <CardText>
-                      {" "}
                       <img
                         className="drinkImgs"
                         src={favorite.img_url}
