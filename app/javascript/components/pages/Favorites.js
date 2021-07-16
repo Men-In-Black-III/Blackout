@@ -12,29 +12,38 @@ export default class Favorites extends Component {
     this.readFavorites();
   }
 
-
-  handleSubmit=(e,id) => {
-    this.props.deleteDrink(id)
-  }
-
-  
+  handleSubmit = (e, id) => {
+    this.deleteDrink(id);
+  };
 
   readFavorites = () => {
     fetch(`http://localhost:3000/drinks`)
       .then((res) => res.json())
       .then((payload) => {
         this.setState({ favorites: payload });
-        console.log("read favorite");
-        console.log("Favorites loaded");
       })
-      // .then((payload)=> this.readFavorites)
       .catch((errors) => {
         console.log(errors);
       });
   };
-  // deleteFavorites = () => {
-  //   console.log(this.drinks.favorite)
-  // }
+
+  deleteDrink = (id) => {
+    fetch(`http://localhost:3000/favorite_drinks/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((payload) => {
+        return this.readFavorites();
+      })
+      .catch((errors) => {
+      console.log("delete errors:", errors);
+      });
+  };
 
   render() {
     console.log(this.state.favorites);
@@ -42,18 +51,20 @@ export default class Favorites extends Component {
       <div>
         {this.state.favorites &&
           this.state.favorites.map((favorite, index) => {
-            // console.log({ favorite });
+            console.log({ favorite });
             return (
               <Row key={favorite.id}>
                 <Col sm="6">
                   <Card body>
                     <CardTitle tag="h5">This is a {favorite.name}</CardTitle>
                     <CardText>
-                      This is how you make it{favorite.instructions}
+                      This is how you make it {favorite.steps}
                     </CardText>
+                    <br/>
                     <CardText>
                       This is what you're going to need {favorite.ingredients}
                     </CardText>
+                    <br/>
                     <CardText>
                       <img
                         className="drinkImgs"
@@ -61,7 +72,9 @@ export default class Favorites extends Component {
                         alt="drink img"
                       />
                     </CardText>
-                    <Button onClick= {(e) => this.handleSubmit(e, favorite.id) }>Delete favorite</Button>
+                    <Button onClick={(e) => this.handleSubmit(e, favorite.id)}>
+                      Delete favorite
+                    </Button>
                   </Card>
                 </Col>
               </Row>

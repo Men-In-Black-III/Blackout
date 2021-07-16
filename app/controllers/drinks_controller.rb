@@ -1,4 +1,4 @@
-class DrinksController < ApplicationController
+    class DrinksController < ApplicationController
     def index
         drinks = current_user.drinks
             render json: drinks

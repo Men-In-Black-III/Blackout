@@ -70,24 +70,6 @@ class App extends React.Component {
     this.postToFavorites(favObj);
   };
 
-  deleteDrink = (id) => {
-    fetch(`http://localhost:3000/favorite_drinks/${id}`, {
-    headers: {
-      "Content-Type": "application/json"
-    },
-    method: "DELETE"
-  })
-  .then(response => {
-    return response.json()
-  })
-  .then(payload => {
-    return this.readDrinks()
-  })
-  .catch(errors => {
-    console.log("delete errors:", errors)
-  })
-  }
-
   render() {
     const { logged_in, current_user } = this.props;
     const { drinks } = this.state;
