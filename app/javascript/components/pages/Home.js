@@ -26,9 +26,16 @@ class Home extends Component {
                     <Card body className="home-cards">
                       <NavLink href={`/DrinkShow/${drink._id}`}>
                         <CardTitle tag="h5">
-                          Cocktail {drink.drinkName}
+                         {drink.drinkName}
                         </CardTitle>
                       </NavLink>
+                      <CardTitle>
+                      <img 
+                        style={{width:"100px", height:"100px"}}
+                        src={drink.drinkThumb}
+                        alt="drink img"
+                        />
+                        </CardTitle>
                       <NavLink href={`/DrinkShow/${drink._id}`}>
                         <Button>Show More</Button>
                       </NavLink>
