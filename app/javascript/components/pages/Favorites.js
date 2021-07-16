@@ -53,7 +53,7 @@ export default class Favorites extends Component {
             console.log({ favorite });
             return (
               <Row key={favorite.id}>
-                <Col sm="6">
+                <Col sm="4">
                   <Card body>
                     <CardTitle tag="h5">This is a {favorite.name}</CardTitle>
                     <CardText>

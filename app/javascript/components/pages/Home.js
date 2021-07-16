@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Button, CardTitle, Row, Col, NavLink } from "reactstrap";
+import { Card, Button, CardTitle, Row, Col, NavLink,Container } from "reactstrap";
 import "../../../assets/stylesheets/home.scss";
 class Home extends Component {
   render() {
@@ -7,12 +7,12 @@ class Home extends Component {
     return (
       <div className="main-body">
         <h2>Cocktails</h2>
-        <div>
+        <Container>
+          <Row>
           {drinks &&
             drinks.map((drink) => {
               return (
-                <Row key={drink._id}>
-                  <Col sm="6">
+                  <Col key={drink._id} sm="4" className="mb-2">
                     <Card body className="home-cards">
                       <NavLink href={`/DrinkShow/${drink._id}`}>
                         <CardTitle tag="h5">
@@ -24,11 +24,11 @@ class Home extends Component {
                       </NavLink>
                     </Card>
                   </Col>
-                </Row>
               );
             })}
-          <a href="#">View More</a>
-        </div>
+            </Row>
+        </Container>
+
       </div>
     );
   }
