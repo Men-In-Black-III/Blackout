@@ -1,11 +1,12 @@
 import React from "react";
 import { Nav, NavItem, NavLink } from "reactstrap";
+// import "../../..assets/stylesheets/header.scss"
 
 
 const Header = (props) => {
   const {logged_in, current_user} = props
   return (
-    <div>
+    <div className="Navbar">
       <Nav>
         <NavItem>
           <NavLink href="/">Home</NavLink>
