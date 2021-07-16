@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import { Card, Button, CardTitle, Row, Col, NavLink,Container } from "reactstrap";
 import "../../../assets/stylesheets/home.scss";
 class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      count:3,
+    }
+  }
+
+  loadMore = () => {
+    this.setState(prev => ({ count: prev.count + 3 }));
+  }
   render() {
     let { drinks } = this.props;
     return (
@@ -10,7 +20,7 @@ class Home extends Component {
         <Container>
           <Row>
           {drinks &&
-            drinks.map((drink) => {
+            drinks.slice(0, this.state.count).map((drink) => {
               return (
                   <Col key={drink._id} sm="4" className="mb-2">
                     <Card body className="home-cards">
@@ -28,7 +38,7 @@ class Home extends Component {
             })}
             </Row>
         </Container>
-
+        <Button color = "primary" onClick={this.loadMore}>Load More</Button>   
       </div>
     );
   }
