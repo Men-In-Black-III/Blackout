@@ -1,4 +1,4 @@
-    class DrinksController < ApplicationController
+class DrinksController < ApplicationController
     def index
         drinks = current_user.drinks
             render json: drinks
@@ -6,7 +6,6 @@
     end
 
     def create
-        #current_user to use when not in testing anymore
         drink = Drink.find_by(api_id:params[:api_id])
         drink = Drink.create(drinks_params) if drink.nil? 
         favorite = FavoriteDrink.create(user: current_user, drink: drink) 

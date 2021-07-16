@@ -3,7 +3,6 @@ import { Nav, NavItem, NavLink } from "reactstrap";
 
 
 const Header = (props) => {
-  // console.log(props)
   const {logged_in, current_user} = props
   return (
     <div>

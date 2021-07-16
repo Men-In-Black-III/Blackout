@@ -46,7 +46,6 @@ export default class Favorites extends Component {
   };
 
   render() {
-    console.log(this.state.favorites);
     return (
       <div>
         {this.state.favorites &&

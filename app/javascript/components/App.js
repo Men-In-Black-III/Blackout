@@ -13,7 +13,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       drinks: [],
-      redirect: false
     };
   }
 
@@ -34,41 +33,7 @@ class App extends React.Component {
       });
   };
 
-  postToFavorites = (favObj) => {
-    return fetch("http://localhost:3000/drinks", {
-      body: JSON.stringify(favObj),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    })
-      .then((res) => {
-        if (res.status === 422) {
-          console.log("Please check your submission.");
-        } else {
-          console.log(res);
-          this.setState({redirect:true})
-          return res.json();
-        }
-      })
-      .catch((errors) => {
-        console.log("create errors:", errors);
-      });
-  };
 
-  addToFavorites = (drink) => {
-    drink.drinkIngredients = drink.drinkIngredients.join("");
-    const { drinkIngredients, drinkName, drinkInstructions, drinkThumb, _id } =
-      drink;
-    const favObj = {
-      name: drinkName,
-      img_url: drinkThumb,
-      steps: drinkInstructions,
-      ingredients: drinkIngredients,
-      api_id: _id,
-    };
-    this.postToFavorites(favObj);
-  };
 
   render() {
     const { logged_in, current_user } = this.props;
@@ -99,9 +64,7 @@ class App extends React.Component {
                   return (
                     <DrinkShow
                       drink={drink}
-                      addToFavorites={this.addToFavorites}
                       logged_in={logged_in}
-                      redirect={this.state.redirect}
                     />
                   );
                 }}
