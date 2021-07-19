@@ -44,7 +44,7 @@ class Home extends Component {
                   <CardImg
                     top
                     width="100%"
-                    style={{height:'50%'}}
+                    style={{height:'50%', objectFit:'contain'}}
                     src={drink.drinkThumb}
                     alt="Card image cap"
                   />
