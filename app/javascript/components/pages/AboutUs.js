@@ -1,40 +1,102 @@
-import React from 'react';
+import React from "react";
 import {
-    UncontrolledCarousel,
-    Container
-} from 'reactstrap';
-import "../../../assets/stylesheets/aboutUs.scss";
+  Container,
+  Card,
+  CardText,
+  CardBody,
+  CardLink,
+  CardTitle,
+  CardSubtitle,
+  Row,
+  Col,
+} from "reactstrap";
+import raymond from "../../../assets/images/about_us_Raymond";
+import diego from "../../../assets/images/about_us_Diego";
+import guillermo from "../../../assets/images/about_us_guillermo";
 
-const items = [
-    {
-      src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-      altText: 'Slide 1',
-      caption: 'Slide 1',
-      header: 'Slide 1 Header',
-      key: '1'
-    },
-    {
-      src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-      altText: 'Slide 2',
-      caption: 'Slide 2',
-      header: 'Slide 2 Header',
-      key: '2'
-    },
-    {
-      src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-      altText: 'Slide 3',
-      caption: 'Slide 3',
-      header: 'Slide 3 Header',
-      key: '3'
-    }
-  ];
-
-
-  const AboutUs = () =>
-  <div className="wrapperDiv"> 
-    <Container >
-       <UncontrolledCarousel interval={false} items={items} /> 
+const AboutUs = () => (
+  <div className="wrapperDiv">
+    <Container fluid={true}>
+      <Row sm="3">
+        <Col sm="4">
+          <Card className="aboutus-card">
+            <CardBody>
+              <CardTitle tag="h2">Raymond Li</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">
+                Tech Lead
+              </CardSubtitle>
+            </CardBody>
+            <img
+              className="aboutus-img"
+              src={raymond}
+              alt="picture of Raymond"
+            />
+            <CardBody>
+              <CardText>
+                I began my self taught journey during the start of the
+                COVID-pandemic and dove into the world of coding. Learning to
+                code quickly taught me to ask meaningful questions, thoroughly
+                understand the code, and most importantly to think as a problem
+                solver.
+              </CardText>
+              <CardLink
+                href="https://linkedin.com/in/raymondli1993"
+                target="_blank"
+              >
+                LinkedIn
+              </CardLink>
+              <CardLink href="https://raymndli.com/" target="_blank">Raymond's Portfolio</CardLink>
+            </CardBody>
+          </Card>
+        </Col>
+        <Col sm="4">
+          <Card className="aboutus-card">
+            <CardBody>
+              <CardTitle tag="h2">Diego Hernandes</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">
+                Design Lead
+              </CardSubtitle>
+            </CardBody>
+            <img className="aboutus-img" src={diego} alt="photo of Diego" />
+            <CardBody>
+              <CardText>
+                I am a software engineer seeking a position with where I can
+                apply my past work experience and be an asset to the company as
+                well as attain personal satisfaction as a front end developer.
+              </CardText>
+              <CardLink href="https://linkedin.com/in/dgohdz" target="_blank">LinkedIn</CardLink>
+              <CardText>Work in progress</CardText>
+            </CardBody>
+          </Card>
+        </Col>
+        <Col sm="4">
+          <Card className="aboutus-card">
+            <CardBody>
+              <CardTitle tag="h2">Guillermo Garcia</CardTitle>
+              <CardSubtitle tag="h6" className="mb-2 text-muted">
+                Product Manager
+              </CardSubtitle>
+            </CardBody>
+            <img
+              className="aboutus-img"
+              src={guillermo}
+              alt="photo of Guillermo"
+            />
+            <CardBody>
+              <CardText>
+                hello my name is guillermo i have spent the last couple of years
+                working in the law enforcement/security industry until i
+                recently found my true passion in web development because of the
+                mixture between creativity and technical skills needed
+              </CardText>
+              <CardLink href="https://linkedin.com/in/guillermo-garcia-040255215" target="_blank">LinkedIn</CardLink>
+              <CardText>Work in progress</CardText>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     </Container>
- </div>
+  </div>
+);
 
-  export default AboutUs
+export default AboutUs;
