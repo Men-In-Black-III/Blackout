@@ -3,7 +3,7 @@ import React from 'react'
 const AboutUs = (props) => {
     return (
         <div>
-            <h1>This is AboutUs page</h1>
+            <h1 style={{color:'whitesmoke', textAlign:'center'}}>About Us</h1>
         </div>
 
     )

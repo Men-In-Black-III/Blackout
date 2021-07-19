@@ -9,6 +9,7 @@ import Favorites from "./pages/Favorites";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "../../assets/stylesheets/global.scss";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +43,7 @@ class App extends React.Component {
     return (
       <>
         <Router>
-          <div className="global">
+          <div className="backgroundImage">
             <Header
               component={Header}
               logged_in={logged_in}

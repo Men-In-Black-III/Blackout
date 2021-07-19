@@ -1,7 +1,7 @@
-
-.global {
-    background-image: url('../images/backgroundimg.png');
-    height: 100vh;
-    width: 100vw;
-
+.backgroundImage {
+    background-image: url('../images/bgimage1.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    // height: 100vh;
+    // width: 100vw;
 }
