@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   readDrinks = () => {
-    fetch("http://cocktail-recipes-tully4school.herokuapp.com/drinks")
+    fetch("https://cocktail-recipes-tully4school.herokuapp.com/drinks")
       .then((response) => {
         return response.json();
       })
