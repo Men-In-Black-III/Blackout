@@ -84,3 +84,4 @@ production:
   database: blackout_production
   username: blackout
   password: <%= ENV['BLACKOUT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
