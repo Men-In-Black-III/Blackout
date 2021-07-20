@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Favorites from "./pages/Favorites";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "../../assets/stylesheets/global.scss";
 
 
 class App extends React.Component {
