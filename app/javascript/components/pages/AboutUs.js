@@ -86,7 +86,7 @@ const AboutUs = () => (
             />
             <CardBody>
               <CardText>
-                hello my name is guillermo i have spent the last couple of years
+                hello my name is guillermo I have spent the last couple of years
                 working in the law enforcement/security industry until i
                 recently found my true passion in web development because of the
                 mixture between creativity and technical skills needed

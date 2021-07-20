@@ -53,24 +53,25 @@ export default class Favorites extends Component {
             console.log({ favorite });
             return (
               <Row key={favorite.id}>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle tag="h5">This is a {favorite.name}</CardTitle>
-                    <CardText>
-                      This is how you make it {favorite.steps}
+                <Col sm="4">
+                  <Card body style={{backgroundColor:'black'}}>
+                    <CardTitle tag="h1" style={{color:'whitesmoke'}}>This is a {favorite.name}</CardTitle>
+                    <br/>
+                    <CardText style={{color:'whitesmoke'}}>
+                      <h5>This is how you make it</h5> <br/>{favorite.steps}
                     </CardText>
                     <br/>
-                    <CardText>
-                      This is what you're going to need {favorite.ingredients}
+                    <CardText style={{color:'whitesmoke'}}>
+                    <h5>This is what you're going to need</h5> <br/>{favorite.ingredients}
                     </CardText>
                     <br/>
-                    <CardText>
+                    <CardText style={{color:'whitesmoke'}}>
                       <img
                         className="drinkImgs"
                         src={favorite.img_url}
                         alt="drink img"
                       />
-                    </CardText>
+                    </CardText >
                     <Button onClick={(e) => this.handleSubmit(e, favorite.id)}>
                       Delete favorite
                     </Button>
