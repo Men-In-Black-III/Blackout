@@ -15,18 +15,21 @@ import {
 } from "reactstrap";
 import "../../../assets/stylesheets/home.scss";
 class Home extends Component {
-  constructor(props) {
+
+  constructor(props){
     super(props);
     this.state = {
-      count: 3,
-    };
+      count:3,
+    }
   }
 
   loadMore = () => {
-    this.setState((prev) => ({ count: prev.count + 3 }));
-  };
+    this.setState(prev => ({ count: prev.count + 3 }));
+  }
+
   render() {
     let { drinks } = this.props;
+    console.log(this.state.count)
     return (
       <>
         <h1 className="homeTitle">Blackout</h1>
@@ -39,6 +42,7 @@ class Home extends Component {
           {drinks &&
             drinks.slice(0, this.state.count).map((drink) => {
               return (
+
                 <Col className="card-group-size" key={drink._id} sm="4" className="mb-6">
                 <Card style={{ width: '18rem', height: '18rem' }}>
                   <CardImg
@@ -81,40 +85,5 @@ class Home extends Component {
     );
   }
 }
-
-//         <Container>
-//           <Row>
-//             {drinks &&
-//               drinks.slice(0, this.state.count).map((drink) => {
-//                 return (
-//                   <Col key={drink._id} sm="4" className="mb-6">
-//                     <Card style={{backgroundColor:'black'}}>
-//                       <NavLink href={`/DrinkShow/${drink._id}`} style={{color:'whitesmoke', textAlign:'center'}}>
-//                         <CardTitle tag="h5">{drink.drinkName}</CardTitle>
-//                       </NavLink>
-//                       <CardTitle>
-//                         <img
-//                           style={{ width: "250px", height: "250px", alignItems:'center'}}
-//                           src={drink.drinkThumb}
-//                           alt="drink img"
-//                         />
-//                       </CardTitle>
-//                       <NavLink href={`/DrinkShow/${drink._id}`}>
-//                         <Button>Show More</Button>
-//                       </NavLink>
-//                     </Card>
-//                   </Col>
-//   );
-// })}
-//           </Row>
-//         </Container>
-
-        // <Button color="secondary" onClick={this.loadMore}>
-        //   Load More
-        // </Button>
-//         </div>
-//     );
-//   }
-// }
 
 export default Home;
