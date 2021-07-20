@@ -56,7 +56,7 @@ class DrinkShow extends Component {
     return (
       <div>
         {drink && (
-          <Card body className="drink-name">
+          <Card>
             <CardTitle tag="h5">This is a {drink.drinkName}</CardTitle>
             <CardText>
               This is how you make it{drink.drinkInstructions}

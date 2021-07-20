@@ -1,6 +1,24 @@
 @import 'bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
 
+
+// .backgroundImage {
+//     background-image: url('../images/bgimage1.png');
+//     background-repeat: no-repeat;
+//     background-size: auto;
+//     height: 100vh;
+//     width: 100vw;
+// }
+
+.card-group-size {
+    justify-content: center;
+    
+}
+
+.homeTitle {
+    font-family: 'Fuggles', cursive;
+    font-size: 300px;
+
 //aboutus main container
 .wrapperDiv {
     width:100vw;
@@ -28,6 +46,7 @@
 .aboutTitle {
     font-family: 'Fuggles', cursive;
     font-size: 200px;
+
     text-align: center;
     color: #fff;
     animation: flicker 1.5s infinite alternate;
@@ -41,6 +60,48 @@
       0 0 102px rgb(244, 245, 181),
       0 0 151px rgb(244, 245, 181)
 }
+
+
+// .homeCardGroup {
+//     width: 16rem;
+//     height: 16rem;
+//     align-content: center;
+// }
+
+.showMore-homeButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.loadMore-homeCards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 26px;
+}
+
+.Footer {
+    background-color: black;
+    color: whitesmoke;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #d4af37,
+        0 0 80px #d4af37,
+        0 0 90px #d4af37,
+        0 0 100px #d4af37,
+        0 0 150px #d4af37;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+  }
 
 .aboutus-link{
     font:bolder;
