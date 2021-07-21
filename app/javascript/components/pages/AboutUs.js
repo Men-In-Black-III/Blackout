@@ -16,11 +16,11 @@ import guillermo from "../../../assets/images/about_us_guillermo";
 
 const AboutUs = () => (
   <div className="wrapperDiv">
-    <h3 className="aboutTitle">BLACK OUT</h3>
+    <h3 className="neonTitle">About Us</h3>
     <Container fluid={true}>
       <Row sm="3">
         <Col sm="4">
-          <Card className="aboutus-card">
+          <Card className="cardDecoration">
             <CardBody>
               <CardTitle tag="h2">Raymond Li</CardTitle>
               <CardSubtitle tag="h6" className="mb-2">
@@ -52,7 +52,7 @@ const AboutUs = () => (
           </Card>
         </Col>
         <Col sm="4">
-          <Card className="aboutus-card">
+          <Card className="cardDecoration">
             <CardBody>
               <CardTitle tag="h2">Diego Hernandez</CardTitle>
               <CardSubtitle tag="h6" className="mb-2">
@@ -62,17 +62,15 @@ const AboutUs = () => (
             <img className="aboutus-img" src={diego} alt="photo of Diego" />
             <CardBody>
               <CardText>
-                I am a software engineer seeking a position with where I can
-                apply my past work experience and be an asset to the company as
-                well as attain personal satisfaction as a front end developer.
+              Hi my name is Diego. I’m a full stack software engineer passionate about creating new applications and collaborating with like-minded individuals to find solutions to technological problems with code.
               </CardText>
-              <CardLink className="aboutus-link" href="https://linkedin.com/in/dgohdz" target="_blank">LinkedIn</CardLink>
-              <CardText>Work in progress</CardText>
+              <CardLink className="aboutus-link" href="https://linkedin.com/in/dgohdz" target="linkedin.com/in/dgohdz">LinkedIn</CardLink>
+              <CardText>Portfolio work in progress.</CardText>
             </CardBody>
           </Card>
         </Col>
         <Col sm="4">
-          <Card className="aboutus-card">
+          <Card className="cardDecoration">
             <CardBody>
               <CardTitle tag="h2">Guillermo Garcia</CardTitle>
               <CardSubtitle tag="h6" className="mb-2">
@@ -86,13 +84,13 @@ const AboutUs = () => (
             />
             <CardBody>
               <CardText>
-                hello my name is guillermo I have spent the last couple of years
-                working in the law enforcement/security industry until i
+                Hello my name is Guillermo. I have spent the last couple of years
+                working in the law enforcement/security industry until I
                 recently found my true passion in web development because of the
-                mixture between creativity and technical skills needed
+                mixture between creativity and technical skills needed.
               </CardText>
               <CardLink className="aboutus-link" href="https://linkedin.com/in/guillermo-garcia-040255215" target="_blank">LinkedIn</CardLink>
-              <CardText>Work in progress</CardText>
+              <CardText>Portfolio work in progress.</CardText>
             </CardBody>
           </Card>
         </Col>

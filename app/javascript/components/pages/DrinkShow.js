@@ -56,7 +56,7 @@ class DrinkShow extends Component {
     return (
       <div>
         {drink && (
-          <Card>
+          <Card className="cardDecoration">
             <CardTitle tag="h5">This is a {drink.drinkName}</CardTitle>
             <CardText>
               This is how you make it{drink.drinkInstructions}
@@ -69,6 +69,7 @@ class DrinkShow extends Component {
                 className="drinkImgs"
                 src={drink.drinkThumb}
                 alt="drink img"
+                style={{width:"275px", height:'175px'}}
               />
               {logged_in && (
                 <Button onClick={this.handleSubmit}>Add To Favorites</Button>

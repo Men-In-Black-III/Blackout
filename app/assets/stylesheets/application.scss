@@ -34,17 +34,17 @@
     object-fit: cover;
 }
 
-.aboutus-card{
+.cardDecoration{
     height: 38rem;
     align-content: center;
     opacity: 95%;
     padding: 12px;
     margin: 6px;
-    background-color: gray;
+    background-color:black;
     color: white;
 }
 
-.aboutTitle {
+.neonTitle {
     font-family: 'Fuggles', cursive;
     font-size: 200px;
 
@@ -80,11 +80,14 @@
     flex-direction: row;
     justify-content: center;
     margin-top: 26px;
+    // margin-bottom: 143px;
 }
 
 .Footer {
     background-color: black;
     color: whitesmoke;
+    display: flex;
+    justify-content: center;
 }
 
 @keyframes flicker {
