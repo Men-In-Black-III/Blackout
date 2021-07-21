@@ -16,7 +16,7 @@ class DrinkShow extends Component {
   };
 
   postToFavorites = (favObj) => {
-    return fetch("http://localhost:3000/drinks", {
+    return fetch("https://localhost:3000/drinks", {
       body: JSON.stringify(favObj),
       headers: {
         "Content-Type": "application/json",
@@ -56,25 +56,28 @@ class DrinkShow extends Component {
     return (
       <div>
         {drink && (
-          <Card className="cardDecoration">
+          <Card>
             <CardTitle tag="h5">This is a {drink.drinkName}</CardTitle>
             <CardText>
-              This is how you make it{drink.drinkInstructions}
+              This is how you make it - {drink.drinkInstructions}
             </CardText>
+            <hr/>
             <CardText>
-              This is what you're going to need {drink.drinkIngredients}
+              This is what you're going to need  - {drink.drinkIngredients}
             </CardText>
-            <CardText>
+            <hr/>
+            <div>
               <img
-                className="drinkImgs"
+                className="showImage"
                 src={drink.drinkThumb}
                 alt="drink img"
-                style={{width:"275px", height:'175px'}}
+                style={{width:"350px", height:'350px'}}
               />
-              {logged_in && (
+              
+            </div>
+            {logged_in && (
                 <Button onClick={this.handleSubmit}>Add To Favorites</Button>
               )}
-            </CardText>
           </Card>
         )}
         {this.state.redirect && <Redirect to="/drinks_list" />}

@@ -73,6 +73,7 @@ class App extends React.Component {
               <Route path="/drinks_list" component={Favorites} deleteDrink ={this.deleteDrink} />
               <Route path="/NotFound" component={NotFound} />
             </Switch>
+
           </div>
           <Footer component={Footer} />
         </Router>
