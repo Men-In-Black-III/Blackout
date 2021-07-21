@@ -17,7 +17,7 @@ export default class Favorites extends Component {
   };
 
   readFavorites = () => {
-    fetch(`https://localhost:3000/drinks`)
+    fetch(`/drinks`)
       .then((res) => res.json())
       .then((payload) => {
         this.setState({ favorites: payload });
@@ -28,7 +28,7 @@ export default class Favorites extends Component {
   };
 
   deleteDrink = (id) => {
-    fetch(`https://localhost:3000/favorite_drinks/${id}`, {
+    fetch(`/favorite_drinks/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },

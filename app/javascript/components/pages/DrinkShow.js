@@ -16,7 +16,7 @@ class DrinkShow extends Component {
   };
 
   postToFavorites = (favObj) => {
-    return fetch("https://localhost:3000/drinks", {
+    return fetch("/drinks", {
       body: JSON.stringify(favObj),
       headers: {
         "Content-Type": "application/json",
