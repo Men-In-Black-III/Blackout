@@ -52,7 +52,7 @@ const AboutUs = () => (
           </Card>
         </Col>
         <Col sm="4">
-          <Card className="cardDecoration">
+          <Card>
             <CardBody>
               <CardTitle tag="h2">Diego Hernandez</CardTitle>
               <CardSubtitle tag="h6" className="mb-2">
@@ -65,12 +65,11 @@ const AboutUs = () => (
               Hi my name is Diego. I’m a full stack software engineer passionate about creating new applications and collaborating with like-minded individuals to find solutions to technological problems with code.
               </CardText>
               <CardLink className="aboutus-link" href="https://linkedin.com/in/dgohdz" target="linkedin.com/in/dgohdz">LinkedIn</CardLink>
-              <CardText>Portfolio work in progress.</CardText>
             </CardBody>
           </Card>
         </Col>
         <Col sm="4">
-          <Card className="cardDecoration">
+          <Card>
             <CardBody>
               <CardTitle tag="h2">Guillermo Garcia</CardTitle>
               <CardSubtitle tag="h6" className="mb-2">
@@ -90,7 +89,6 @@ const AboutUs = () => (
                 mixture between creativity and technical skills needed.
               </CardText>
               <CardLink className="aboutus-link" href="https://linkedin.com/in/guillermo-garcia-040255215" target="_blank">LinkedIn</CardLink>
-              <CardText>Portfolio work in progress.</CardText>
             </CardBody>
           </Card>
         </Col>

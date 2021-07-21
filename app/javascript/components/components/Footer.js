@@ -5,7 +5,7 @@ import { Card, Button, CardFooter, CardBody,
   const Footer = (props) => {
     return (
       <div>
-          <CardFooter className="Footer">Created by Men In Black all rights reserved © 2021</CardFooter>
+          <CardFooter>Created by Men In Black all rights reserved © 2021</CardFooter>
       </div>
     );
   };

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
 @import 'global.scss';
 
+
 // .backgroundImage {
 //     background-image: url('../images/bgimage1.png');
 //     background-repeat: no-repeat;
@@ -32,17 +33,44 @@
     width:50%;
     height:50%;
     object-fit: cover;
+    margin: auto;
 }
 
-.cardDecoration{
+.card-title {
+    display: flex;
+    justify-content: center;
+}
+
+.card-text {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
     height: 38rem;
-    align-content: center;
+    // display: flex;
+    justify-content: center;
     opacity: 95%;
     padding: 12px;
     margin: 6px;
     background-color:black;
     color: white;
 }
+
+.showImage {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.mb-2 {
+    text-align: center;
+}
+
+.card-subtitle {
+    text-align: center;
+}
+
 
 .neonTitle {
     font-family: 'Fuggles', cursive;
@@ -83,11 +111,12 @@
     // margin-bottom: 143px;
 }
 
-.Footer {
+.card-footer {
     background-color: black;
     color: whitesmoke;
     display: flex;
     justify-content: center;
+    bottom:0;
 }
 
 @keyframes flicker {
