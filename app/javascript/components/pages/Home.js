@@ -32,7 +32,7 @@ class Home extends Component {
     console.log(this.state.count)
     return (
       <>
-        <h1 className="homeTitle">Blackout</h1>
+        <h1 className="neonTitle">Blackout</h1>
 
         <br/>
 

@@ -54,7 +54,7 @@ export default class Favorites extends Component {
             return (
               <Row key={favorite.id}>
                 <Col sm="4">
-                  <Card body style={{backgroundColor:'black'}}>
+                  <Card body className="cardDecoration">
                     <CardTitle tag="h1" style={{color:'whitesmoke'}}>This is a {favorite.name}</CardTitle>
                     <br/>
                     <CardText style={{color:'whitesmoke'}}>
@@ -70,6 +70,7 @@ export default class Favorites extends Component {
                         className="drinkImgs"
                         src={favorite.img_url}
                         alt="drink img"
+                        style={{width:"275px", height:'175px'}}
                       />
                     </CardText >
                     <Button onClick={(e) => this.handleSubmit(e, favorite.id)}>
